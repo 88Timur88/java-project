@@ -1,0 +1,12 @@
+февр. 22, 2024 1:42:33 AM Seminar2.lectTwo5 main
+INFO: Start program
+февр. 22, 2024 1:42:33 AM Seminar2.lectTwo5 getContentsFolder
+INFO: getContentsFolder
+февр. 22, 2024 1:42:33 AM Seminar2.lectTwo5 writeToFile
+WARNING: Ошибка записи файла
+февр. 22, 2024 1:42:51 AM Seminar2.lectTwo5 main
+INFO: Start program
+февр. 22, 2024 1:42:51 AM Seminar2.lectTwo5 getContentsFolder
+INFO: getContentsFolder
+февр. 22, 2024 1:42:51 AM Seminar2.lectTwo5 writeToFile
+WARNING: Ошибка записи файла
