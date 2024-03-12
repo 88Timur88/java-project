@@ -19,7 +19,7 @@ class Notebook {
 
     @Override
     public String toString() {
-        return "Laptop{" +
+        return "Notebook{" +
                 "brand='" + brand + '\'' +
                 ", ram=" + ram +
                 ", hdd=" + hdd +
@@ -30,6 +30,7 @@ class Notebook {
 }
 
 public class GetSortNotebook {
+    @SuppressWarnings("unused")
     public static void main(String[] args) {
         Set<Notebook> notebook = new HashSet<>();
         notebook.add(new Notebook("Dell", 16, 512, "Windows", "Black"));
@@ -79,20 +80,20 @@ public class GetSortNotebook {
         }
         scanner.close();
 
-        Set<Notebook> filteredLaptops = notebook.stream()
-                .filter(laptop -> filters.getOrDefault("ram", 0) instanceof Integer
-                        && laptop.ram >= (int) filters.getOrDefault("ram", 0))
-                .filter(laptop -> filters.getOrDefault("hdd", 0) instanceof Integer
-                        && laptop.hdd >= (int) filters.getOrDefault("hdd", 0))
-                .filter(laptop -> filters.getOrDefault("os", "").equals("")
-                        || laptop.os.equalsIgnoreCase((String) filters.getOrDefault("os", "")))
-                .filter(laptop -> filters.getOrDefault("color", "").equals("")
-                        || laptop.color.equalsIgnoreCase((String) filters.getOrDefault("color", "")))
+        Set<Notebook> filteredNotebooks = notebook.stream()
+                .filter(notebok -> filters.getOrDefault("ram", 0) instanceof Integer
+                        && notebok.ram >= (int) filters.getOrDefault("ram", 0))
+                .filter(notebok -> filters.getOrDefault("hdd", 0) instanceof Integer
+                        && notebok.hdd >= (int) filters.getOrDefault("hdd", 0))
+                .filter(notebok -> filters.getOrDefault("os", "").equals("") 
+                        || notebok.os.equalsIgnoreCase((String) filters.getOrDefault("os", "")))
+                .filter(notebok -> filters.getOrDefault("color", "").equals("")
+                        || notebok.color.equalsIgnoreCase((String) filters.getOrDefault("color", "")))
                 .collect(Collectors.toSet());
 
         System.out.println("Отфильтрованные ноутбуки:");
-        for (Notebook laptop : filteredLaptops) {
-            System.out.println(laptop);
+        for (Notebook notebok : filteredNotebooks) {
+            System.out.println(notebook);
         }
     }
 }
